@@ -1,0 +1,22 @@
+{
+    "name": "jaeger/querylist-rule-google",
+    "description": "QueryList Plugin: Google searcher. QueryList谷歌搜索插件",
+    "require": {
+        "PHP":">=7.0"
+    },
+    "require-dev": {
+        "jaeger/querylist": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "QL\\Ext\\": ""
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jaeger",
+            "email": "JaegerCode@gmail.com"
+        }
+    ]
+}

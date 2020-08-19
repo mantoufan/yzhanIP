@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{http_host} ^b.juw8.com [NC]
+RewriteRule ^(.*)$ http://juw8.icu/$1 [L,R=302]

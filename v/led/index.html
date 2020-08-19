@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>LED滚动字_聚网吧_聚集好网址</title>
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="applicable-device" content="pc,mobile">
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="x5-fullscreen" content="true"><meta name="full-screen" content="yes">
+<link href="https://cdnjs.loli.net/ajax/libs/pure/1.0.0/pure-min.css" rel="stylesheet">
+<style>
+	h1{
+		font-size: 16px;
+		margin: 0;
+		text-align: center;
+		background: #F2F2F2;
+		line-height: 30px;
+	}
+	body{
+		overflow: hidden;
+	}
+	#a{
+		background:#000000;
+		color:#FFFFFF;
+		position: absolute;
+		top: 0;
+		width: 1000000%;
+		height: 100%;
+		overflow: hidden;
+	}
+	.none{
+		display: none;
+	}
+</style>
+</head>
+<body>
+<h1>LED滚动字</h1>
+<form class="pure-form">
+<textarea class="pure-input-1" id="t" placeholder="请输入要滚动的文字（横屏效果更好，点击屏幕，退出滚动）"></textarea>
+<input type="submit" value="滚动" class="pure-button"/>
+</form>
+<script src="https://cdnjs.loli.net/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+	var i='a',f=$('form'),w,h,d;
+	f.submit(function(){
+		var s=$(this).find('textarea').val(),fc;
+		if(s===''){
+			return false;
+		}
+		d=$('#'+i);
+		if(d.length===0){
+			d=$('<div>');
+			d.attr('id',i);
+			d.css({fontSize:h+'px',lineHeight:h+'px'});
+		}
+		d.html('<span>'+s+'</span>');
+		$('body').append(d);
+		fs(d);
+		fc=function(){
+			var s=d.find('span'),t=parseInt(s.html().length*3+'000');
+			s.css('marginLeft',w+'px');
+			s.animate({marginLeft:'-'+d.find('span').width()+'px'},t,'linear',fc);
+		};
+		fc();
+		return false;
+	});
+	var sf=function(){
+		w=$(window).width();
+		h=$(window).height();
+		if(d && d.length>0){
+			d.css({fontSize:h+'px',lineHeight:h+'px'});
+		}
+	}
+	window.onresize=sf;
+	sf();
+	var full=0,fs=function(o) {
+		var el = o instanceof HTMLElement ? o : (full===0?document.documentElement:document),r;
+		if(full===0){
+			r=el.requestFullscreen||el.webkitRequestFullscreen||el.mozRequestFullScreen||el.msRequestFullscreen;
+			full=1;
+			$('body').click(function(){
+				fs();
+				$('#'+i).remove();
+			});
+		}else{
+			$('body').unbind('click');
+			r=el.exitFullscreen||el.mozCancelFullScreen||el.webkitExitFullscreen||el.msExitFullscreen;
+			full=0;
+			
+		}console.log(el);
+		console.log(r);
+		r.call(el);
+	};
+	
+</script>
+<div class="none"><script src="https://s11.cnzz.com/z_stat.php?id=1259839027&web_id=1259839027" language="JavaScript"></script></div>
+</body>
+</html>
