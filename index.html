@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="x5-fullscreen" content="true"><meta name="full-screen" content="yes">
-<link href="https://cdnjs.loli.net/ajax/libs/pure/1.0.0/pure-min.css" rel="stylesheet">
+<link href="//cdn.jsdelivr.net/npm/purecss@1.0.0/build/pure-min.min.css" rel="stylesheet">
 <style>
 body{
 	font-size:12px;
@@ -21,15 +21,14 @@ body{
 	line-height: 2.5em;
 }
 .m-list a{
-	background: #ffffff;
-    cursor: pointer;
-    border: 1px dashed #F7F7F7;
-    border-width: 0 0 1px 0;
-    width: 30%;
-    letter-spacing: normal;
-    text-decoration: none;
-    color: #333333;
-	display: inline-block;
+  float: left;
+  padding: 5px 10px;
+	background: #efefef;
+  cursor: pointer;
+  border: solid #fff;
+  border-width: 2px 2px 0 0;
+  text-decoration: none;
+  color: #333;
 }
 .m-list a img{
 	border: 0;
@@ -39,9 +38,8 @@ body{
 }
 .m-list a.m-head{
 	background: #666666;
-    color: white;
-    width: 10%;
-    border: none;
+  color: white;
+  clear: both;
 }
 .m-list a:hover,.m-s div:hover{
 	background: #D0D0D0;
@@ -57,18 +55,18 @@ body{
 }
 h1{
 	font-size: 1em;
-    margin: 0;
-    text-align: center;
-    line-height: 25px;
-    background: #F7F7F7;
+  margin: 0;
+  text-align: center;
+  line-height: 25px;
+  background: #F7F7F7;
 }
 .m-back,.m-web{
 	background: #555555;
-    color: #FFFFFF;
-    text-decoration: none;
-    text-align: center;
-    float: right;
-    line-height: 24px;
+  color: #FFFFFF;
+  text-decoration: none;
+  text-align: center;
+  float: right;
+  line-height: 24px;
 	margin:0 0 0 5px;
 	padding: 0 5px;
 }
@@ -94,25 +92,24 @@ h1{
 <a class="m-web" href="/v/f/">收藏夹</a>
 <h1>Y站导航</h1>
 <div id="mAddressBar"></div>
-<div class="pure-g m-list">
-<a class="m-head">学习</a><a href="//www.cilin.org/zidian/shouxie.html">手写查字</a><a href="//fanyi.baidu.com">翻译</a>
-<a href="//daan.xuezizhai.com/index.php?s=80&module=answer&view=search">找答案</a><a class="m-head">游戏</a><a href="//cha.17173.com">游戏数据</a>
-<a href="//www.lolhelper.cn/">LOL隐藏分</a><a href="/v/s/">游戏攻略</a>
-<a class="m-head"></a><a href="//p.yot.pw/100749">小游戏</a><a href="//app.yzhan.in">分享助手</a><a href="//live.yzhan.nl">直播 电视<sup></sup></a>
-<a class="m-head">神器</a><a href="//m.99baiduyun.com">网盘搜索</a><a href="//clg.cm">磁力BT</a><a href="//www.jiumodiary.com">电子书搜索</a>
-<a class="m-head"></a><a href="//m.bookbao99.net">VIP小说</a><a href="//www.ciding.fun">VIP音乐</a><a href="//www.laodouban.com">云点播</a>
-<a class="m-head">实用</a><a href="//speed.neu.edu.cn">网速测试</a><a href="//m.oacn.org/sfz/">身份证号</a><a href="//catbox.moe">图床网盘</a>
-<a class="m-head"></a><a href="//cli.im/mob">二维码生成</a><a href="//app.xunjiepdf.com/ocr">音图识别转换</a><a href="//linshiyouxiang.net">临时邮箱</a>
-<a class="m-head"></a><a href="//www.cn-ki.net">免费论文下载</a><a href="//www.hiwenku.com">百度文库下载</a><a></a>
-<a class="m-head"></a><a href="//tool.manmanbuy.com/m/history.aspx">查商品最低价</a><a href="//m.pingshu8.com/">听评书相声</a><a></a>
-<a class="m-head">装扮</a><a href="//p.yot.pw/萌头像">萌头像</a><a href="//m.win4000.com">壁纸</a><a href="//m.13400.com">铃声</a>
-<a class="m-head"></a><a href="//share.yzhan.nl/h/">花体字</a><a href="//m.3dmgame.com/dl/">单机游戏下载</a><a href="/v/led/">LED滚动字</a>
-<a class="m-head">动漫</a><a href="//hmacg.cn/bangumi/">追番表</a><a href="//paintschainer.preferred.tech">线稿自动上色</a><a href="//make.girls.moe">女孩头像定制</a>
-<a class="m-head m-b">MTF</a><a href="//p.yot.pw">发帖得❤</a><a href="//p.yot.pw/weal">赚❤</a><a href="//p.yot.pw/swap">花❤</a><a></a>
+<div class="m-list">
+<a class="m-head">学习</a><a href="//www.cilin.org/zidian/shouxie.html">手写查字</a><a href="//fanyi.youdao.com">有道翻译</a>
+<a href="//daan.xuezizhai.com/index.php?s=80&module=answer&view=search">找答案</a>
+<a class="m-head">游戏</a><a href="//cha.17173.com">游戏数据</a>
+<a href="//www.lolhelper.cn/">LOL隐藏分</a>
+<a href="//p.yot.pw/100749">小游戏</a><a href="//app.yzhan.in">分享助手</a><a href="//live.yzhan.nl">直播聚合<sup></sup></a>
+<a class="m-head">神器</a><a href="//m.99baiduyun.com">99网盘搜索</a><a href="//clg.cm">磁力狗</a><a href="//www.jiumodiary.com">电子书搜索</a>
+<a href="//www.laodouban.com">老豆瓣</a><a href="//catbox.moe">图床网盘</a>
+<a href="//cli.im/mob">二维码生成</a><a href="//app.xunjiepdf.com/ocr">音图识别转换</a>
+<a href="//www.cn-ki.net">免费论文下载</a>
+<a href="//tool.manmanbuy.com/m/history.aspx">查商品最低价</a><a href="//m.pingshu8.com/">听评书相声</a>
+<a class="m-head">装扮</a><a href="//p.yot.pw/萌头像">萌头像</a><a href="//m.13400.com">铃声</a>
+<a href="//share.yzhan.nl/h/">花体字</a><a href="//m.3dmgame.com/dl/">单机游戏下载</a><a href="/v/led/">LED滚动字</a>
+<a class="m-head">动漫</a><a href="//hmacg.cn/bangumi/">追番表</a>
+<a class="m-head m-b">MTF</a><a href="//p.yot.pw">发帖得❤</a><a href="//p.yot.pw/weal">赚❤</a><a href="//p.yot.pw/swap">花❤</a>
 </div>
-<div id="m-foot"><a href="//t.cn/RmOqYeg">聚网吧</a>　<a href="//t.cn/RucuvkB">提交新网址</a></div>
 <div class="m-none">
-<script type="text/javascript" src="https://cdn.dm126.com/share/mtfFrame.js" ></script><script type="text/javascript" src="https://cdn.dm126.com/share/mtfAddressBar.js" ></script>
+<script type="text/javascript" src="//cdn.dm126.com/share/mtfFrame.js" ></script><script type="text/javascript" src="//cdn.dm126.com/share/mtfAddressBar.js" ></script>
 <script>
 mtfFrame.menu();mtfFrame.refresh();mtfFrame.update(1);mtfFrame.pm();mtfFrame.pwa.p();
 mtfAddressBar.add(document.getElementById('mAddressBar'),function(){
