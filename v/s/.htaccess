@@ -1,3 +1,0 @@
-RewriteEngine On
-RewriteRule ^([^/])$ %{REQUEST_URI}/ [R=302,L]
-RewriteRule ^(.*)$ index.php?mtfq=$1

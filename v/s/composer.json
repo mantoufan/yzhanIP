@@ -1,6 +1,0 @@
-{
-    "require": {
-        "jaeger/querylist-rule-google": "^4.0",
-        "jaeger/querylist": "^4.0"
-    }
-}
