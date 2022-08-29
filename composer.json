@@ -1,0 +1,44 @@
+{
+  "name": "mantoufan/yzhanip",
+  "type": "library",
+  "description": "Crawl, match, parse IP or IP range, check if IP or range is in another range. Support IPv4, IPv6, IP Interval, Wildcard and CIDR. Check if IP is Cloudflare node IP, Google bot IP. 爬取，正则匹配，解析 IP 和 IP 范围，检测 IP 或范围是否在另一个范围中。支持 IPv4，IPv6，区间、通配符或 CIDR 表示的 IP 范围。检测 IP 是否是 Cloudflare 节点或 Google 漫游器 IP",
+  "keywords": [
+    "IP",
+    "IPv4",
+    "IPv6",
+    "CIDR",
+    "IPRange",
+    "WILDCARD",
+    "Crawler",
+    "Parser",
+    "Tracer",
+    "Conveter",
+    "解析",
+    "正则",
+    "转换",
+    "范围"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Shon Wu",
+      "email": "mhjlw@126.com",
+      "homepage": "https://github.com/mantoufan"
+    }
+  ],
+  "scripts": {
+    "test": "phpunit",
+    "coverage": "phpunit --coverage-clover clover.xml"
+  },
+  "require": {
+    "php": ">=5.4"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "YZhanIP\\": "src/"
+    }
+  }
+}

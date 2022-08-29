@@ -1,0 +1,27 @@
+<?php
+namespace YZhanIP\Data;
+class IPData {
+  const IPV4 = '127.0.0.1';
+  const IPV4CIDR = '127.0.0.1/21';
+  const IPV4CIDRINTERVAL = '127.0.0.0-127.0.7.255';
+  const IPV4INTERVAL = '127.0.0.1-127.0.0.30';
+  const IPV4WILDCARD = '127.0.0.*';
+  const IPV4WILDCARDINTERVAL = '127.0.0.0-127.0.0.255';
+  const IPV6FULL = '2001:4860:4801:0000:0000:0000:0000:af88';
+  const IPV6 = '2001:4860:4801::af88';
+  const IPV6CIDR = '2001:4860:4801::af88/7';
+  const IPV6CIDRINTERVAL = '2000::-21ff:ffff:ffff:ffff:ffff:ffff:ffff:ffff';
+  const IPV6INTERVAL = '2001:4860:4801::af88-2001:4860:4801::afff';
+  const IPV6WILDCARD = '2001:4860:*::af88';
+  const IPV6WILDCARDINTERVAL = '2001:4860::af88-2001:4860:ffff::af88';
+  const IPINVAILD = '2001:4860:*:.:af88';
+  const IPV4GOOGLEBOT = '66.249.64.97';
+  const IPV6GOOGLEBOT = '2001:4860:4801:48::1';
+  const IPV4CLOUDFALRE = '173.245.48.1';
+  const IPV6CLOUDFALRE = '2400:cb00::1';
+  const IPV4GOOGLEBOTCIDR = '66.249.64.0/27';
+  const IPV6GOOGLEBOTCIDR = '2001:4860:4801:10::/64';
+  const IPV4CLOUDFALRECIDR = '173.245.48.0/20';
+  const IPV6CLOUDFALRECIDR = '2400:cb00::/32';
+}
+?>

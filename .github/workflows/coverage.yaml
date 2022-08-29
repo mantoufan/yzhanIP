@@ -1,0 +1,37 @@
+name: Test Coverage
+on:
+  push:
+    branches: [ 'master' ]
+
+jobs:
+  laravel-tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        operating-system: [ubuntu-latest]
+        php-versions: [ '7.4' ]
+
+    name: P${{ matrix.php-versions }} - ${{ matrix.operating-system}}
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install PHP versions
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+      - name: Install Dependencies
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+
+      - name: Install php-xdebug
+        run: sudo apt-get install php-xdebug
+
+      - name: Execute tests (Unit and Feature tests) via Phpunit
+        run: composer run coverage
+
+      - name: Generate test coverage badge
+        uses: timkrase/phpunit-coverage-badge@v1.2.0
+        with:
+          coverage_badge_path: 'badge-coverage.svg'
+          push_badge: true
+          repo_token: ${{ secrets.TOKEN }}
