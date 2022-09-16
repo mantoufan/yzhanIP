@@ -1,10 +1,11 @@
 <?php
 namespace YZhanIP\Tool;
 use YZhanIP\Tool\IPParser;
+use YZhanCache\YZhanCache;
 class IPCrawler {
   private $url = '';
   private $options = array();
-  private $path = '';
+  private $yzhanCache;
   public function __construct(string $url, $options = array()) {
     $this->url = $url;
     $this->options = array_merge(array(
@@ -13,13 +14,15 @@ class IPCrawler {
       'cacheMaxAge' => 86400,
       'timeOut' => 6,
     ), $options);
-    $this->path = $this->options['cacheDir'] . '/' . $this->options['cacheKey'] . '.php';
+    $this->yzhanCache = new YZhanCache('File', array(
+      'dir' => $this->options['cacheDir']
+    ));
   }
   public function get(): array {
-    if (is_file($this->path) === false || time() - filemtime($this->path) > $this->options['cacheMaxAge']) {
+    if ($this->yzhanCache->has($this->options['cacheKey']) === false) {
       $this->update();
     }
-    return is_file($this->path) ? include $this->path : null;
+    return $this->yzhanCache->get($this->options['cacheKey']);
   }
   public function update(): void {
     $ch = curl_init();
@@ -30,7 +33,7 @@ class IPCrawler {
       CURLOPT_SSL_VERIFYHOST => 0,
       CURLOPT_SSL_VERIFYPEER => 0,
     ));
-    file_put_contents($this->path, '<?php return ' . var_export(IPParser::MatchAll(curl_exec($ch)), true) . ';?>');
+    $this->yzhanCache->set($this->options['cacheKey'], IPParser::MatchAll(curl_exec($ch)), $this->options['cacheMaxAge']);
     curl_close($ch);
   }
   public function getUrl(): string {
@@ -39,8 +42,8 @@ class IPCrawler {
   public function getOptions(): array {
     return $this->options;
   }
-  public function getPath(): string {
-    return $this->path;
+  public function clearCache() {
+    return $this->yzhanCache->clear();
   }
 }
 ?>
